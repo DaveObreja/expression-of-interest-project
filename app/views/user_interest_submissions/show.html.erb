@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user_interest_submission %>
+
+<div>
+  <%= link_to "Edit this user interest submission", edit_user_interest_submission_path(@user_interest_submission) %> |
+  <%= link_to "Back to user interest submissions", user_interest_submissions_path %>
+
+  <%= button_to "Destroy this user interest submission", @user_interest_submission, method: :delete %>
+</div>

@@ -1,0 +1,72 @@
+<%= form_with(model: user_interest_submission) do |form| %>
+  <% if user_interest_submission.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_interest_submission.errors.count, "error") %> prohibited this user_interest_submission from being saved:</h2>
+
+      <ul>
+        <% user_interest_submission.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :surname, style: "display: block" %>
+    <%= form.text_field :surname %>
+  </div>
+
+  <div>
+    <%= form.label :company_name, style: "display: block" %>
+    <%= form.text_field :company_name %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :number_of_employees, style: "display: block" %>
+    <%= form.text_field :number_of_employees %>
+  </div>
+
+  <div>
+    <%= form.label :position, style: "display: block" %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div>
+    <%= form.label :telephone, style: "display: block" %>
+    <%= form.text_area :telephone %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :contact_consent, style: "display: block" %>
+    <%= form.check_box :contact_consent %>
+  </div>
+
+  <div>
+    <%= form.label :monthly_newsletter, style: "display: block" %>
+    <%= form.check_box :monthly_newsletter %>
+  </div>
+
+  <div>
+    <%= form.label :questions, style: "display: block" %>
+    <%= form.text_area :questions %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

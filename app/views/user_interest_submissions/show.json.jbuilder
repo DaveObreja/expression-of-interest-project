@@ -1,0 +1,1 @@
+json.partial! "user_interest_submissions/user_interest_submission", user_interest_submission: @user_interest_submission

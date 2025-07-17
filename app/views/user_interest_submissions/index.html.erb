@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>User interest submissions</h1>
+
+<div id="user_interest_submissions">
+  <% @user_interest_submissions.each do |user_interest_submission| %>
+    <%= render user_interest_submission %>
+    <p>
+      <%= link_to "Show this user interest submission", user_interest_submission %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user interest submission", new_user_interest_submission_path %>
