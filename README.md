@@ -1,24 +1,56 @@
-# README
+# Synopsis
+An application that can record down any inputted details from a person.
+These details will revolve around them being interested in a company.
+This web application can be hosted locally or on a web platform.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Setup
+## Requirements
+It is assumed that you have already went through setting up your hosting envrionment for the following packages:
+- Windows OS
+- WSL2 (Ubuntu 24.04.2 LTS)
+- ASDF
+- Node
+- Ruby 3.3.3
+- Rails 7.1.5.1
+- Git
+- A web browser for accessing the application (Google Chrome)
 
-Things you may want to cover:
+If you have not, this step-by-step guide might help: https://gorails.com/setup/windows/11
 
-* Ruby version
+## Step by step
+This guide will help you setup this application on a local machine. This assumes you are currently using WSL:
+1. Using github, `git pull` this repository.
+2. In the terminal, run the following commands at the root of the project in the specified order:
+  1. `systemctl start postgres`
+  2. `bundle`
+  3. `npm install`
+  4. `yarn install`
+  5.`rails db:create`
+  6. `rails db:migrate`
+  7. `rails db:setup`
+  8. `./bin/dev`
+3. Access the application at `localhost:3000` (Or whichever port you are hosting the application on the loopback address)
+4. Done!
 
-* System dependencies
+## Validate integrity
+Run `rails test` to validate that the environment has successfully initialized.
 
-* Configuration
+# Using the application
+## For the customer
+Ensure the url of your web browser is set to `localhost:3000`.
+From there on (with supervision), feel free to let the client use it as they wish.
+Preferably do this in an incognito tab to keep your session and the customers seperate.
 
-* Database creation
+## For the Sales Team
+You can access all the inputted information into the local database here: http://localhost:3000/user_interest_submissions/
+You WILL be prompted with a username and password.
+The default credentials can be found under `app/controllers/user_interest_submissions_controller.rb` line 5.
+It is **strongly** recommended that you change these at your earliest convenience.
+It is also recommended that you keep your sales session and the customer session seperate to prevent any unexpected easy acess to this panel, preferably through incognito tabs on your web browser.
 
-* Database initialization
+# Support
+Please message the repository owner for any queries regarding setting up the application.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# License
+MIT
+*Note: This application was made as part of an examination. Feel free to use any parts as you may like.*

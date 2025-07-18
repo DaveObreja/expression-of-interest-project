@@ -2,8 +2,7 @@ class UserInterestSubmission < ApplicationRecord
   require 'uk_phone_numbers'
 
   validates :first_name, :surname, :company_name, :address, :position, 
-    :telephone, :email, :contact_consent, :monthly_newsletter, presence: true
-
+    :telephone, :email, :contact_consent, presence: true
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
   validates :contact_consent, acceptance: true

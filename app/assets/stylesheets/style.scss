@@ -1,0 +1,21 @@
+.top-header {
+  height: 300px;
+  img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+.logo-image {
+  height: 200px;
+}
+
+.bottom-header {
+  height: 100px;
+}
+
+.form-control {
+  &.form-button {
+    max-width: 175px;
+  }
+}

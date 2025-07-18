@@ -10,7 +10,25 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="xyz-secondary-background-color">
+    <%# Top headers and required images %>
+    <div class="d-flex flex-column align-items-center w-100 bg-white">
+      <div class="top-header xyz-secondary-background-color w-100">
+        <%= image_tag asset_path("used-computer-asset.png"), class: "w-100" %>
+      </div>
+      <%= image_tag asset_path("company-logo.png"), class: "logo-image" %>
+    </div>
+
+    <div class="bg-white">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%# Bottom footer disclaimer %>
+    <div class="bottom-header xyz-secondary-background-color text-center">
+      <p class="text-white mt-4 mb-0"> Sample Disclaimer Text © </p>
+      <p class="text-white"> All assets used under this webpage are licensed under Creative Commons CC0 1.0 Universal unless where otherwise stated.</p>
+    </div>
   </body>
 </html>

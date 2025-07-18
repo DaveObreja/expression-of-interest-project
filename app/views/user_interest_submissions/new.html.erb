@@ -1,11 +1,19 @@
-<h1>New user interest submission</h1>
+<h1 class="fw-bold">Expression of Interest</h1>
+
+<p> Thank you for your interest in XYZ Dev Limited. We aim to provide the best eCommerce solutions for our customers and clients.  Please fill out all of the required fields in the form below in order to gain a better understanding of your interest in our services and for contacting you further. </p>
 
 <div class="d-flex flex-column align-items-center w-100">
   <%= render "form", user_interest_submission: @user_interest_submission %>
 </div>
 
 <br>
+<%# Difficult to track down, explain in video that you had difficulty with making an anchor element here. %>
+<div id="success"></div>
+<% if @sent_form %>
+  <div class="container success-background-color text-center p-4">
+    <h3 class="text-white fw-bold"> Thank You </h3>
+    <p class="text-white"> We will be in touch through the provided contact details. </p>
+  </div>
+<% end %>
 
-<div>
-  <%= link_to "Back to user interest submissions", user_interest_submissions_path %>
-</div>
+<br>

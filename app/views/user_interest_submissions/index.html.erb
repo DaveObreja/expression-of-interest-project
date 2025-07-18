@@ -3,6 +3,12 @@
 <h1>User interest submissions</h1>
 
 <div id="user_interest_submissions">
+
+  <%= form_tag(user_interest_submissions_path, method: :get, html: {class: "d-flex flex-row"})  do |f| %>
+    <%= button_tag "Search" %>
+    <%= text_field_tag :search_query, nil, placeholder: "Search by first name or surname.", class: "w-50" %>
+  <% end %>
+
   <% @user_interest_submissions.each do |user_interest_submission| %>
     <%= render user_interest_submission %>
     <p>

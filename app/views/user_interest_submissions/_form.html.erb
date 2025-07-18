@@ -1,72 +1,95 @@
-<%= form_with(model: user_interest_submission) do |form| %>
+<%= form_with(model: user_interest_submission, html: { class: "d-flex flex-column gap-3 w-100" }) do |form| %>
   <% if user_interest_submission.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user_interest_submission.errors.count, "error") %> prohibited this user_interest_submission from being saved:</h2>
+    <div class="danger-background-color p-3">
+      <h2 class="text-white">We could not save your response for the following reasons:</h2>
 
       <ul>
         <% user_interest_submission.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li class="text-white"><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+    <%= form.label :first_name, class: "h4 fw-bold" %>
+    <%= form.text_field :first_name, placeholder: "Input your first name here", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :surname, style: "display: block" %>
-    <%= form.text_field :surname %>
+    <%= form.label :surname, class: "h4 fw-bold" %>
+    <%= form.text_field :surname, placeholder: "Input your surname here", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :company_name, style: "display: block" %>
-    <%= form.text_field :company_name %>
+    <%= form.label :company_name, class: "h4 fw-bold" %>
+    <%= form.text_field :company_name, placeholder: "Input your company name here", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+    <%= form.label :address, class: "h4 fw-bold" %>
+    <%= form.text_field :address, placeholder: "Input your address here", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :number_of_employees, style: "display: block" %>
-    <%= form.text_field :number_of_employees %>
+    <%= form.label :number_of_employees, class: "h4 fw-bold" %>
+    <%= form.select :number_of_employees, options_for_select(@number_of_employees), { include_blank: false }, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :position, style: "display: block" %>
-    <%= form.text_field :position %>
+    <%= form.label :position, class: "h4 fw-bold" %>
+    <%= form.text_field :position, placeholder: "Input your current position here", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :telephone, style: "display: block" %>
-    <%= form.text_area :telephone %>
+    <%= form.label :telephone, class: "h4 fw-bold" %>
+    <%= form.text_field :telephone, placeholder: "Input your phone number here", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.label :email, class: "h4 fw-bold" %>
+    <%= form.text_field :email, placeholder: "Input your email here", type: "email", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :contact_consent, style: "display: block" %>
-    <%= form.check_box :contact_consent %>
+    <%= form.label :questions, class: "h4 fw-bold" %>
+    <p> What queries about our products or services do you have for us? </p>
+    <%= form.text_area :questions, placeholder: "Input additional information here", class: "form-control rounded border w-100" %>
   </div>
 
   <div>
-    <%= form.label :monthly_newsletter, style: "display: block" %>
-    <%= form.check_box :monthly_newsletter %>
+    <%= form.label :contact_consent, "Declaration of Consent", class: "h4 fw-bold" %>
+    <div class="d-flex flex-row justify-content-beginning align-items-center">
+      <%= form.check_box :contact_consent %>
+      <%= form.label :contact_consent, "Do you consent to XYZ contacting you?", class: "ms-2" %>
+    </div>
   </div>
 
   <div>
-    <%= form.label :questions, style: "display: block" %>
-    <%= form.text_area :questions %>
+    <%= form.label :monthly_newsletter, class: "h4 fw-bold" %>
+    <p> Would you like to sign up to our monthly newsletter? </p>
+    <div class="d-flex flex-row gap-4">
+      <div class="d-flex flex-row gap-1">
+        <%= radio_button :user_interest_submission, :monthly_newsletter, true, class: "form-check-input" %>
+        <p> Yes </p>
+      </div>
+      
+      <div class="d-flex flex-row gap-1">
+        <%= radio_button :user_interest_submission, :monthly_newsletter, false, class: "form-check-input" %>
+        <p> No </p>
+      </div>
+    </div>
   </div>
 
+  <% if controller.action_name == "edit" %>
+    <div>
+      <%= form.label :sales_notes, class: "h4 fw-bold" %>
+      <p> Additional sales notes by authorised user on this interest submission. </p>
+      <%= form.text_area :sales_notes, placeholder: "Input additional sales notes here", class: "form-control rounded border w-100" %>
+    </div>
+  <% end %>
+
   <div>
-    <%= form.submit %>
+    <%= form.submit "Submit Form", class: "form-control form-button xyz-primary-background-color text-white fw-bold" %>
   </div>
 <% end %>

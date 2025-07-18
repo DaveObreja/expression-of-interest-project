@@ -1,0 +1,48 @@
+$xyz_primary_color: #418EC4;
+$xyz_secondary_color: #5D5779;
+$success_color: #28A745;
+$failure_color: #ff0000;
+
+:root {
+  --xyz-primary: #{$xyz_primary_color};
+  --xyz-secondary: #{$xyz_secondary_color};
+  --success-color: #{$success_color};
+  --failure-color: #{$failure_color};
+}
+
+input[type="checkbox"] {
+  accent-color: var(--xyz-primary);
+}
+
+.form-check-input:checked {
+  background-color: var(--xyz-primary);
+  border-color: var(--xyz-primary);
+}
+
+h1 {
+  color: var(--xyz-primary);
+}
+
+.xyz-primary-color {
+  color: var(--xyz-primary);
+}
+
+.xyz-secondary-color {
+  color: var(--xyz-secondary);
+}
+
+.xyz-primary-background-color {
+  background-color: var(--xyz-primary);
+}
+
+.xyz-secondary-background-color {
+  background-color: var(--xyz-secondary);
+}
+
+.success-background-color {
+  background-color: var(--success-color);
+}
+
+.danger-background-color {
+  background-color: var(--failure-color);
+}
