@@ -51,6 +51,15 @@ It is also recommended that you keep your sales session and the customer session
 # Support
 Please message the repository owner for any queries regarding setting up the application.
 
+# Packages used
+- [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
+- [solargraph-rails](https://github.com/iftheshoefritz/solargraph-rails)
+- [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
+- [uk_phone_numbers](https://github.com/gocardless/uk_phone_numbers)
+- [bootstrap](https://getbootstrap.com/)
+- [hotwire](https://hotwired.dev/)
+
+
 # License
 MIT
 *Note: This application was made as part of an examination. Feel free to use any parts as you may like.*
