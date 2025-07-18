@@ -21,14 +21,14 @@ If you have not, this step-by-step guide might help: https://gorails.com/setup/w
 This guide will help you setup this application on a local machine. This assumes you are currently using WSL:
 1. Using github, `git pull` this repository.
 2. In the terminal, run the following commands at the root of the project in the specified order:
-  1. `systemctl start postgres`
-  2. `bundle`
-  3. `npm install`
-  4. `yarn install`
-  5.`rails db:create`
-  6. `rails db:migrate`
-  7. `rails db:setup`
-  8. `./bin/dev`
+  - `systemctl start postgres`
+  - `bundle`
+  - `npm install`
+  - `yarn install`
+  - `rails db:create`
+  - `rails db:migrate`
+  - `rails db:setup`
+  - `./bin/dev`
 3. Access the application at `localhost:3000` (Or whichever port you are hosting the application on the loopback address)
 4. Done!
 
@@ -45,11 +45,13 @@ Preferably do this in an incognito tab to keep your session and the customers se
 You can access all the inputted information into the local database here: http://localhost:3000/user_interest_submissions/
 You WILL be prompted with a username and password.
 The default credentials can be found under `app/controllers/user_interest_submissions_controller.rb` line 5.
-It is **strongly** recommended that you change these at your earliest convenience.
+It is **strongly** recommended that you change these at your earliest convenience, or you consult with the corresponding technician on these credentials.
 It is also recommended that you keep your sales session and the customer session seperate to prevent any unexpected easy acess to this panel, preferably through incognito tabs on your web browser.
 
 # Support
 Please message the repository owner for any queries regarding setting up the application.
+For the video tutorial, please consult with your technician or supervisor for it.
+
 
 # Packages used
 - [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
